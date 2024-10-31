@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
+  const navigate = useNavigate();
   const [agreements, setAgreements] = useState({
     all: false,
     terms: false,
@@ -57,6 +59,10 @@ function Signup() {
   const handleDistrictSelect = (district) => {
     setSelectedDistrict(district);
     setDistrictOpen(false);
+  };
+
+  const handleSignup = () => {
+    navigate('/mypage');
   };
 
   return (
@@ -148,10 +154,10 @@ function Signup() {
             <span className={`text-xl ${
               agreements.all ? 'text-[#48CBC8]' : 'text-[#A7ADB1]'
             }`}>아래 약관을 모두 동의합니다.</span>
-            <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
+            <div className={`w-7 h-7 rounded-full flex items-center justify-center ${
               agreements.all ? 'bg-[#48CBC8]' : 'border-2 border-gray-300'
             }`}>
-              <span className={`text-sm font-bold ${agreements.all ? 'text-white' : 'text-gray-300'}`}>✓</span>
+              <span className={`text-base font-bold ${agreements.all ? 'text-white' : 'text-gray-300'}`}>✓</span>
             </div>
           </div>
 
@@ -183,7 +189,10 @@ function Signup() {
           </div>
         </div>
 
-        <button className="w-full p-4 bg-[#B4FFE3] text-[#12918E] rounded-lg text-lg font-medium font-family: Pretendard mt-6">
+        <button 
+          onClick={handleSignup}
+          className="w-full p-4 bg-[#B4FFE3] text-[#12918E] rounded-lg text-lg font-medium font-family: Pretendard mt-6"
+        >
           가입하기
         </button>
       </div>

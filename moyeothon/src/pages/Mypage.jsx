@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaRegPenToSquare } from "react-icons/fa6";
 
 function Mypage() {
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(1);
 
   return (
@@ -13,7 +15,11 @@ function Mypage() {
       <div className="bg-[#ECFFF8] rounded-lg p-5 mb-8 relative">
         <h2 className="mb-2 text-xl font-family: Pretendard">&&*(투엠퍼센트) 님</h2>
         <p className="text-sm text-black font-family: Pretendard">likelion@naver.com</p>
-        <button className="absolute text-xl -translate-y-1/2 right-5 top-1/2 size-3"><FaRegPenToSquare />
+        <button 
+          className="absolute text-xl -translate-y-1/2 right-5 top-1/2 size-3"
+          onClick={() => navigate('/fix')}
+        >
+          <FaRegPenToSquare />
         </button>
       </div>
 

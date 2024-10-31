@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -28,9 +29,9 @@ function Login() {
       {/* 회원가입 링크 */}
       <div className="mt-4 text-center">
         <span className="text-[#A7ADB1] font-family: Pretendard">계정이 없으신가요? </span>
-        <a href="." className="text-[#4ED9D4] font-family: Pretendard">
+        <Link to="/signup" className="text-[#4ED9D4] font-family: Pretendard">
           회원가입하기
-        </a>
+        </Link>
       </div>
     </div>
   );
